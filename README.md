@@ -27,3 +27,21 @@ on authenticating your client. Once authenticated, you'll be ready to start maki
 
 All the functions are implemented in the GoogleTranslate.php
 
+### Simple Example
+```sh
+<?php
+
+use Integration\GoogleTranslate\GoogleTranslate;
+use Integration\GoogleTranslate\Entity\TranslateConditionEntity;
+class Sample
+{
+    public function translate($input, $targetLanguage) {
+        return GoogleTranslate::translate($input, new TranslateConditionEntity(null, $targetLanguage));
+    }
+
+    public function detectLanguage($input) {
+        return GoogleTranslate::detectLanguage($input);
+    }
+}
+
+```
